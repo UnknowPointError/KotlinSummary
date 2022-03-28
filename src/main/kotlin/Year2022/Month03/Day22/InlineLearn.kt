@@ -30,15 +30,20 @@ class InlineLearn {
         println("Without inline function take ${endTime - startTime} ms.")
     }
 
-    inline fun noinlineFunction(block: List<Double>.() -> Unit, noinline block2: String.() -> Unit) {
+    inline fun noinlineFunction(
+        block: List<Double>.() -> Unit,
+        noinline block2: String.() -> Unit,
+        crossinline block3: CharSequence.() -> Unit,
+    ) {
         val list = listOf<Double>(1.22, 2.1, 3.999, 4.33, 5.22)
         val name = "Barry"
+        val charSequence = sequenceOf(1, 2, 3, 4, 5, 'A') as CharSequence
         block(list)
         block2(name)
+        block3(charSequence)
+        println("End")
     }
 }
-
-
 fun main() {
     InlineLearn().apply {
         inlineFunction {
@@ -54,15 +59,26 @@ fun main() {
             }
         }
         noinlineFunction({
-            println("Hello,World! noinline Function.")
+            println("Hello,World! inline Function.")
             repeat(1000) {
                 print("")
             }
-        }) {
+            return // inline支持lambda函数外部函数的返回
+        }, {
             println("Hello,World! noinline Function.")
             repeat(1000) {
                 print("")
+
             }
-        }
+            return@noinlineFunction
+//            return 错误，noinline不支持外部函数的返回,并且不会优化内存，效率高
+        }, {
+            println("Hello,World! crossInline Function.")
+            repeat(1000) {
+                print("")
+            }
+            return@noinlineFunction
+//            return 错误，crossInline不支持外部函数的返回，优化内存，效率降低
+        })
     }
 }
