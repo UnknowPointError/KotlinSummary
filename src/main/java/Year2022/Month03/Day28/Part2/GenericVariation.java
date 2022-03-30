@@ -11,8 +11,8 @@ import java.util.List;
 */
 public class GenericVariation {
     public static void main(String[] args) {
-        List<? extends Animal> animals = new ArrayList<>(); // List<Cat> 变成了 List<? extends Animal
-        List<Cat> cats = new ArrayList<>();
-        animals = cats;
+        List<? extends Animal> animals = new ArrayList<>();
+        // List<Cat> 变成了 List<? extends Animal>的子类型，即animals变成了可以放入任何Animal及其子类的List
+        animals = new ArrayList<Cat>();
     }
 }

@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.6.10-RC"
+    id("org.jetbrains.kotlin.jvm") version "1.6.10"
 }
 
 group = "org.example"
@@ -12,4 +12,5 @@ repositories {
 dependencies {
     implementation(Configuration.Dependencies.kotlin_stdlib)
     implementation(Configuration.Dependencies.kotlin_coroutine)
+    implementation(Configuration.Dependencies.kotlin_reflect)
 }

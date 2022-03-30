@@ -18,6 +18,4 @@ fun main() {
     tony.password = "P@ssword"
     println("-----------------------")
     println("tony.password = ${tony.password}")
-
-
 }
