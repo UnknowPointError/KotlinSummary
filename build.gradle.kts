@@ -13,4 +13,5 @@ dependencies {
     implementation(Configuration.Dependencies.kotlin_stdlib)
     implementation(Configuration.Dependencies.kotlin_coroutine)
     implementation(Configuration.Dependencies.kotlin_reflect)
+    implementation(Configuration.Dependencies.kotlinx_datetime)
 }
