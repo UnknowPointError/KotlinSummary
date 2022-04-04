@@ -15,5 +15,6 @@ public class Extension {
         System.out.println(extension.name.getClass().getName());
         int x = false ? 5 : 6;
         System.out.println(x);
+
     }
 }

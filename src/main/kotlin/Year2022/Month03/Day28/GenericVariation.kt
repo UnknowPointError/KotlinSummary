@@ -7,7 +7,7 @@ import Year2022.Month03.Day28.Part2.Cat
 @Machine: RedmiBook Pro 15 
 @Author: Barry
 @Time: 2022/3/28 23:17 周一
-@Description: 型变
+@Description: 协变
 */
 class GenericVariation
 

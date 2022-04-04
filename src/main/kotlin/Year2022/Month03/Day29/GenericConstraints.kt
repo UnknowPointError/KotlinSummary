@@ -11,3 +11,4 @@ class GenericConstraints<T>(var variable: Class<T>) where T : GenericConstraints
 
 open class GenericConstraintsA
 interface GenericConstraintsB
+
