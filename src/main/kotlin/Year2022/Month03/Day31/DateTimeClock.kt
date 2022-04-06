@@ -17,10 +17,8 @@ fun main() {
     println(188 days ago)
     println(188 years later)
     println(188 years ago)
-    val number: Int? = null
+    var number: Int? = null
     val x = number ?: 1
     println(x)
-    number.checkNull({ println("number is null") }, { println("number is $this") })
-    val result = number.checkNullGetReturns({ this }, { this })
-    println(result)
+    if (number == null) println("null") else println(number)
 }
