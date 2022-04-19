@@ -1,10 +1,12 @@
 package Util
 
 import java.sql.Timestamp
+import java.text.SimpleDateFormat
 import java.time.Duration
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.Period
+import java.util.*
 
 /*
 @Machine: RedmiBook Pro 15
@@ -77,6 +79,9 @@ infix fun Int.months(later: later): LocalDate = LocalDate.now().plusMonths(toLon
 infix fun Int.months(ago: ago): LocalDate = LocalDate.now().minusMonths(toLong())
 infix fun Int.years(later: later): LocalDate = LocalDate.now().plusYears(toLong())
 infix fun Int.years(ago: ago): LocalDate = LocalDate.now().minusYears(toLong())
-fun getTime(): String = LocalDateTime.now().run {
-    "${year}年${month.value}月${dayOfMonth}日${hour}时${minute}分"
-}
+
+/* 获取时间 */
+fun getTime(): String = LocalDateTime.now().run { "${year}年${month.value}月${dayOfMonth}日${hour}时${minute}分" }
+
+/* 将时间戳转换为时间 */
+fun timeStampToDate(timeStamp: Long): String? = SimpleDateFormat("YYYY-MM-dd-HH:mm ss : aa").format(Date(timeStamp * 1000))

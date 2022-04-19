@@ -1,6 +1,7 @@
 package Year2022.Month04.Day03
 
 import kotlin.properties.Delegates
+import kotlin.random.Random
 
 /* 
 @Machine: RedmiBook Pro 15 
@@ -40,5 +41,5 @@ fun main() {
         text = "Hi"
     }
     println("textView.text : ${textView.text}")
+    println("======================")
 }
-

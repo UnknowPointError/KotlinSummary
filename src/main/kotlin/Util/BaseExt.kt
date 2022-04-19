@@ -7,3 +7,10 @@ package Util
 @Description: BaseUtil工具类
 */
 
+fun Any.log(newLine: Boolean = true) = if (newLine) println(this) else print(this)
+
+infix fun String.by(number: Int): String {
+    var str = ""
+    repeat(number) { str += this }
+    return str
+}
