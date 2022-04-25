@@ -1,6 +1,6 @@
 package MineBBS.Model
 
-import MineBBS.MineBBS_Config
+import MineBBS.MINEBBS_CONFIG
 import retrofit2.Call
 import retrofit2.http.GET
 
@@ -12,6 +12,6 @@ import retrofit2.http.GET
 */
 
 interface RequestURL {
-    @GET(MineBBS_Config.BASE_URL_API_VERSION)
+    @GET(MINEBBS_CONFIG.BASE_URL_API_VERSION)
     fun getBaseEntity() : Call<ModelEntity.GET.BaseEntity>
 }

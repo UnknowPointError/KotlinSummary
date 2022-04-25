@@ -1,16 +1,10 @@
 package MineBBS.NetWork
 
-import MineBBS.BaseUtil.RetrofitExt
-import MineBBS.BaseUtil.RetrofitExt.await
-import MineBBS.MineBBS_Config
-import MineBBS.Model.ModelEntity
+import MineBBS.BaseUtil.MINEBBS_RETROFIT
 import MineBBS.Model.RequestURL
-import Util.log
-import Util.timeStampToDate
+import Util.RetrofitExt.await
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import retrofit2.*
-import retrofit2.converter.gson.GsonConverterFactory
 
 
 /*
@@ -25,7 +19,7 @@ fun main() = runBlocking<Unit> {
         launch {
             try {
                 println("sadasda")
-                val request = RetrofitExt.create(RequestURL::class.java).getBaseEntity().await()
+                val request = MINEBBS_RETROFIT.create(RequestURL::class.java).getBaseEntity().await()
                 println(request.data)
                 println(request.ApiCodeName)
                 println(request.isSuccess)
